@@ -1,10 +1,5 @@
 # tradrly
 
-Certainly! Here's an updated README with the additional code and explanations:
-
-```markdown
-# Flask Image Text Extraction App
-
 This is a Flask web application that allows users to upload an image file, extracts text from the image using the `analyse` module, and displays a message with the result on the webpage. Additionally, the application provides a button to download a report in the `/results.txt` file.
 
 ## How to Use
@@ -37,14 +32,33 @@ This is a Flask web application that allows users to upload an image file, extra
 5. Run the Flask app:
 
    ```bash
-   python app.py
+   python api.py
    ```
 
    The application will be accessible at [http://localhost:5000](http://localhost:5000).
 
 6. Upload an image file using the provided file upload form. After the upload, the app will process the image, and a message will be displayed indicating the success or failure of the process.
 
-7. If the image is successfully processed, a button labeled "Download Report" will appear. Clicking this button will trigger the download of a report file (`/results/report.txt`) containing the extracted text, dates, phone numbers, and document type.
+7. If the image is successfully processed, report file (`/results/report.txt`) containing the extracted text, dates, phone numbers, and document type.
+
+
+## OR you can just use docker
+
+1. install docker 
+
+2. Navigate to Your Project Directory:
+Open a terminal or command prompt and navigate to the root directory of your project.
+
+cd /path/to/your/tradrly
+
+3. Build Docker Images :
+
+docker build --tag python-docker .
+
+4. Run Docker Compose:
+
+docker run -d -p 5000:5000 python-docker
+
 
 ## Project Structure
 
@@ -64,10 +78,3 @@ This is a Flask web application that allows users to upload an image file, extra
 ## How to Extend
 
 Feel free to extend this application by adding additional features or improving the image-to-text extraction functionality in the `analyse` module.
-
-## License
-
-This project is licensed under the [MIT License](LICENSE).
-```
-
-Remember to replace `[Any other dependencies used in your 'analyse' module.]` with the actual dependencies used in the `analyse` module. Adjust the information according to your specific application.
