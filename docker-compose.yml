@@ -1,0 +1,12 @@
+version: '3.3'
+services:
+
+  web:
+    build: .
+    restart: always
+    command: "python api.py"
+
+    ports:
+      - "5000:5000"
+    volumes:
+      - .:/tradrly_project/data
